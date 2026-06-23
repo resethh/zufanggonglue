@@ -1,0 +1,16 @@
+<view class="container">
+  <view wx:if="{{loading}}" class="empty">加载中…</view>
+
+  <block wx:elif="{{contracts.length}}">
+    <view wx:for="{{contracts}}" wx:key="_id" class="card tpl-card" data-id="{{item._id}}" bindtap="goEdit">
+      <view class="tpl-name">{{item.name}}</view>
+      <view class="tpl-summary muted">{{item.summary}}</view>
+      <view class="tpl-clauses">
+        <text wx:for="{{item.clauses}}" wx:for-item="c" wx:key="*this" class="tag">{{c}}</text>
+      </view>
+      <view class="tpl-go">填写并导出 ›</view>
+    </view>
+  </block>
+
+  <view wx:elif="{{loaded}}" class="empty">暂无模板，请先在云开发执行 seed 云函数初始化数据</view>
+</view>

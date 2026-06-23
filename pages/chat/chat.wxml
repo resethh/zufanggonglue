@@ -1,0 +1,49 @@
+<view class="chat-page">
+  <scroll-view class="msg-list" scroll-y scroll-top="{{scrollTop}}" scroll-with-animation>
+    <view wx:for="{{messages}}" wx:key="index" class="msg msg-{{item.role}}">
+      <view class="bubble bubble-{{item.role}}">
+        <text class="bubble-text" decode>{{item.text}}</text>
+
+        <!-- RAG 命中的避雷帖来源 -->
+        <view wx:if="{{item.sources.length}}" class="sources">
+          <view class="sources-title">⚠️ 避雷库来源</view>
+          <view
+            wx:for="{{item.sources}}"
+            wx:for-item="src"
+            wx:key="_id"
+            class="source-item"
+            data-community="{{src.community}}"
+            bindtap="goAvoid"
+          >
+            <text class="source-name">{{src.city}} · {{src.community}}</text>
+            <text class="source-desc">{{src.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="quick-asks">
+    <view
+      wx:for="{{quickAsks}}"
+      wx:key="*this"
+      class="quick-chip"
+      data-q="{{item}}"
+      bindtap="onQuickAsk"
+    >{{item}}</view>
+  </view>
+
+  <view class="input-bar">
+    <input
+      class="input"
+      placeholder="问问看房攻略，或报小区名查避雷…"
+      value="{{input}}"
+      confirm-type="send"
+      bindinput="onInputChange"
+      bindconfirm="send"
+    />
+    <button class="send-btn btn-primary" size="mini" disabled="{{sending || !input}}" bindtap="send">
+      {{sending ? '…' : '发送'}}
+    </button>
+  </view>
+</view>

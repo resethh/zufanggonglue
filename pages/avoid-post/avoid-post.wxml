@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="card">
+    <view class="form-row">
+      <text class="label">城市 *</text>
+      <input class="field" placeholder="如：杭州" value="{{city}}" data-field="city" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">小区名 *</text>
+      <input class="field" placeholder="如：阳光花园" value="{{community}}" data-field="community" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">标题 *</text>
+      <input class="field" placeholder="一句话说重点" value="{{title}}" data-field="title" bindinput="onInput" />
+    </view>
+    <view class="form-row col">
+      <text class="label">详细情况 *</text>
+      <textarea class="field textarea" placeholder="噪音/异味/物业/隔音/中介套路…越具体越能帮到别人" value="{{content}}" data-field="content" bindinput="onInput" maxlength="1000" />
+    </view>
+    <view class="form-row">
+      <text class="label">署名</text>
+      <input class="field" placeholder="可留空，默认匿名" value="{{author}}" data-field="author" bindinput="onInput" />
+    </view>
+  </view>
+
+  <button class="btn-primary submit" disabled="{{submitting}}" bindtap="submit">
+    {{submitting ? '发布中…' : '发布'}}
+  </button>
+  <view class="muted tip">温馨提示：请客观描述真实经历，避免人身攻击与不实信息。</view>
+</view>

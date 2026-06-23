@@ -1,0 +1,81 @@
+.edit-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.scroll {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.row.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: #2f6df6;
+  font-size: 26rpx;
+  font-weight: 400;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #f0f1f5;
+}
+
+.form-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  width: 200rpx;
+  flex: none;
+  font-size: 28rpx;
+}
+
+.field {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.body {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f7f8fa;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  line-height: 1.7;
+  min-height: 600rpx;
+}
+
+.action-bar {
+  display: flex;
+  gap: 20rpx;
+  padding: 16rpx 24rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.action-bar button {
+  flex: 1;
+  margin: 0;
+}
+
+.btn-ghost {
+  background: #eef2fb;
+  color: #2f6df6;
+  border-radius: 48rpx;
+  font-size: 30rpx;
+}

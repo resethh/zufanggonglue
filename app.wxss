@@ -1,0 +1,67 @@
+/* app.wxss — 全局样式与设计变量 */
+page {
+  --primary: #2f6df6;
+  --primary-light: #e8f0ff;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1f2329;
+  --text-sub: #8a8a8a;
+  --danger: #e54d42;
+  --radius: 16rpx;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 28rpx;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 48rpx;
+  font-size: 30rpx;
+}
+
+.btn-primary[disabled] {
+  background: #b9ccf9;
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 22rpx;
+  background: var(--primary-light);
+  color: var(--primary);
+  margin-right: 12rpx;
+}
+
+.muted {
+  color: var(--text-sub);
+  font-size: 24rpx;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-sub);
+  padding: 120rpx 0;
+  font-size: 26rpx;
+}

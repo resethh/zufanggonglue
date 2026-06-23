@@ -1,0 +1,28 @@
+<view class="avoid-page">
+  <view class="search-bar">
+    <input class="search-input" placeholder="城市" value="{{city}}" bindinput="onCityInput" confirm-type="search" bindconfirm="onSearch" />
+    <input class="search-input" placeholder="小区名" value="{{community}}" bindinput="onCommunityInput" confirm-type="search" bindconfirm="onSearch" />
+    <view class="search-btn" bindtap="onSearch">搜索</view>
+    <view class="reset-btn" bindtap="onReset">重置</view>
+  </view>
+
+  <scroll-view scroll-y class="list">
+    <view wx:if="{{loading}}" class="empty">加载中…</view>
+
+    <block wx:elif="{{posts.length}}">
+      <view wx:for="{{posts}}" wx:key="_id" class="card post-card" data-id="{{item._id}}" bindtap="goDetail">
+        <view class="post-head">
+          <text class="tag">{{item.city}}</text>
+          <text class="tag">{{item.community}}</text>
+        </view>
+        <view class="post-title">{{item.title}}</view>
+        <view class="post-content">{{item.content}}</view>
+        <view class="post-foot muted">{{item.author || '匿名租客'}}</view>
+      </view>
+    </block>
+
+    <view wx:elif="{{loaded}}" class="empty">没有找到相关避雷帖，换个关键词或点右下角发帖 ✍️</view>
+  </scroll-view>
+
+  <view class="fab" bindtap="goPost">＋ 发帖</view>
+</view>

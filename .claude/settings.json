@@ -1,0 +1,8 @@
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-62EMmmSqL1dAEpngrZd5jI1lD07UZyn3mDIT1qm8fhRT9MkG",
+    "ANTHROPIC_BASE_URL": "https://maas.marketingforce.com",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",
+    "ANTHROPIC_MODEL": "claude-opus-4-8"
+  }
+}

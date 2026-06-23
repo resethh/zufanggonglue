@@ -1,0 +1,43 @@
+<view class="edit-page" wx:if="{{!loading && contract}}">
+  <scroll-view scroll-y class="scroll">
+    <view class="container">
+      <!-- 变量填写 -->
+      <view class="card">
+        <view class="section-title">填写信息</view>
+        <view wx:for="{{fields}}" wx:key="key" class="form-row">
+          <text class="label">{{item.label}}</text>
+          <input
+            class="field"
+            placeholder="{{item.placeholder || item.label}}"
+            value="{{values[item.key]}}"
+            data-key="{{item.key}}"
+            bindinput="onFieldInput"
+          />
+        </view>
+      </view>
+
+      <!-- 可编辑正文 -->
+      <view class="card">
+        <view class="section-title row between">
+          <text>合同正文（可直接编辑）</text>
+          <text class="link" bindtap="resetBody">重置</text>
+        </view>
+        <textarea
+          class="body"
+          value="{{bodyText}}"
+          bindinput="onBodyInput"
+          maxlength="-1"
+          auto-height
+        />
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="action-bar">
+    <button class="btn-ghost" bindtap="copyAll">复制全文</button>
+    <button class="btn-primary" bindtap="exportFile">导出/下载</button>
+  </view>
+</view>
+
+<view wx:elif="{{loading}}" class="empty">加载中…</view>
+<view wx:else class="empty">模板不存在</view>

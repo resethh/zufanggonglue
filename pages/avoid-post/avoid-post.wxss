@@ -1,0 +1,49 @@
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f1f5;
+}
+
+.form-row.col {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  width: 150rpx;
+  flex: none;
+  color: #1f2329;
+  font-size: 28rpx;
+}
+
+.form-row.col .label {
+  width: auto;
+  margin-bottom: 12rpx;
+}
+
+.field {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.textarea {
+  width: 100%;
+  height: 240rpx;
+  background: #f7f8fa;
+  border-radius: 12rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+
+.submit {
+  margin: 32rpx 0 16rpx;
+}
+
+.tip {
+  text-align: center;
+}

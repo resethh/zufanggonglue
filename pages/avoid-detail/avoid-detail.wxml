@@ -1,0 +1,15 @@
+<view class="container">
+  <view wx:if="{{loading}}" class="empty">加载中…</view>
+
+  <view wx:elif="{{post}}" class="card">
+    <view class="head">
+      <text class="tag">{{post.city}}</text>
+      <text class="tag">{{post.community}}</text>
+    </view>
+    <view class="title">{{post.title}}</view>
+    <view class="content">{{post.content}}</view>
+    <view class="foot muted">{{post.author || '匿名租客'}}</view>
+  </view>
+
+  <view wx:else class="empty">帖子不存在或已删除</view>
+</view>

@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/chat/chat",
+    "pages/avoid/avoid",
+    "pages/avoid-post/avoid-post",
+    "pages/avoid-detail/avoid-detail",
+    "pages/contract/contract",
+    "pages/contract-edit/contract-edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2f6df6",
+    "navigationBarTitleText": "租房攻略",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f6fa"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#2f6df6",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "攻略问答"
+      },
+      {
+        "pagePath": "pages/avoid/avoid",
+        "text": "避雷"
+      },
+      {
+        "pagePath": "pages/contract/contract",
+        "text": "合同"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
